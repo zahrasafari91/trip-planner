@@ -23,7 +23,7 @@ const particlesOptions = {
       // color: "#256278",
       blur: 5
       },
-      number: { value: 80, density: { enable: true, value_area: 8 } },
+      number: { value: 800, density: { enable: true, value_area: 800 } },
     color: { value: "#cbe8f2" },
     }
   }
@@ -247,7 +247,7 @@ function App() {
 					  	</div>
 				  	)
 
-            
+
 				    })}
 			    </div>
       
