@@ -14,16 +14,15 @@ const weatherApi = {
 
 
 
+// react particles js
 
 const particlesOptions = {
   particles: {
     line_linked: {
       shadow: {
       enable: true,
-      // color: "#256278",
-      blur: 5
       },
-      number: { value: 800, density: { enable: true, value_area: 800 } },
+      number: { value: 100, density: { enable: true} },
     color: { value: "#cbe8f2" },
     }
   }
@@ -34,15 +33,15 @@ const particlesOptions = {
 function App() {
 
 
-
+// search query for searching both weather and wikipedia api
   const [query, setQuery] = useState('');
+
   const [weather, setWeather] = useState({});
 
-
-	const [results, setResults] = useState([]);
-
+	const [wikipedia, setWikipedia] = useState([]);
 
 
+//get weather
   const searchWeather = e => {
     if (e.key === "Enter") {
 
@@ -58,10 +57,14 @@ function App() {
             error.message = 'city not found';
             throw error;}
 
+
+
           else{
 
           setWeather(result);
           setQuery('');}
+
+
 
           console.log(result);
         });}
@@ -69,7 +72,7 @@ function App() {
 
  
 
-
+//get Date
   const dateBuilder = (d) => {
 
     let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -87,8 +90,8 @@ function App() {
   }
 
 
-
-  const handleSearch = async e => {
+//get wikipedia info
+  const searchWikipedia = async e => {
 
 
 		e.preventDefault();
@@ -104,7 +107,7 @@ function App() {
 		}
 
 		const json = await response.json();
-		setResults(json.query.search);
+		setWikipedia(json.query.search);
 		
 	}
 
@@ -115,20 +118,25 @@ function App() {
 
   return (
     
-    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
+    <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 14) ? 'app warm' : 'app') : 'app'}>
 
  
 
 
         <main>
-            <div className="container">
+            
+            {/* weather elements */}
 
-              <div className="search-box">
+            
+            <div className="weather-container">
+            
+
+              <div className="weather-search-box">
 
 
                   <input 
                     type="text"
-                    className="search-bar"
+                    className="weather-search-bar"
                     placeholder="Search..."
                     onChange={e => setQuery(e.target.value)}
                     value={query}
@@ -195,12 +203,21 @@ function App() {
        
 
       
+        {/* particles  elements */}
+
 
         <div>
          <Particles className = 'particles' params={particlesOptions}/>              
         </div>
      
         
+
+
+
+
+        {/* wikipedia elements */}    
+        
+         
         <div className="wiki">
       
       
@@ -210,7 +227,7 @@ function App() {
 
 
 
-			  	<form className="search-box-wiki" onSubmit={handleSearch}>
+			  	<form className="search-box-wiki" onSubmit={searchWikipedia}>
 
 
 					  <input type="search" placeholder="Search here"  
@@ -225,25 +242,25 @@ function App() {
           </div>
 
       
-			    <div className="results">
+			    <div className="wiki-results">
 
 
 
-			    	{results.map((result, i) => {
+			    	{wikipedia.map((result) => {
 					  const url = `https://en.wikipedia.org/?curid=${result.pageid}`;
 					  
             
             return (
-						  <div className="result" key={i}>
+						  <div className="wiki-result">
 
 
 							  <h3>{result.title}</h3>
 
 
-						  	<p dangerouslySetInnerHTML={{ __html: result.snippet  }}></p>
+						  	<p dangerouslySetInnerHTML={{ __html: result.snippet }}></p>
 
 
-							  <a href={url} target="blank" rel="noreferrer">Read more</a>
+							  <a href={url} target="blank">Read more</a>
 					  	</div>
 				  	)
 

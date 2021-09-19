@@ -5,14 +5,8 @@
 }
 
 body {
-  font-family:   'Optima', 'sans-serif';
-  
-  /* 'Marker Felt', 'fantasy'; */
-  /* 'Comic Sans MS', 'Comic Sans', 'cursive'; */
-
+  font-family:'Optima', 'sans-serif';
     height: 100vh;
-    /* display: flex;
-    flex-direction: column; */
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -22,7 +16,6 @@ body {
 .app {
   background-image: url('./assets/cold-wed.jpeg');
   background-size: cover;
-  /* min-height: 100vh; */
   background-position: top;
 }
 
@@ -35,7 +28,9 @@ main {
 
 }
 
-.container{
+
+/****************** Weather Styles Start  *****************/
+.weather-container{
   height: 600px;
   width: 600px;
   background-color: rgba(255, 255, 255, 0.13);
@@ -54,12 +49,12 @@ main {
  
 }
 
-.search-box {
+.weather-search-box {
   margin: 50px 30px;
   
 }
 
-.search-box .search-bar {
+.weather-search-box .weather-search-bar {
   display: block;
   width: 100%;
   padding: 15px;
@@ -76,7 +71,7 @@ main {
   transition: 0.4s ease;
 }
 
-.search-box .search-bar:focus {
+.weather-search-box .weather-search-bar:focus {
   background-color: rgba(168, 209, 236, 0.75);
 }
 
@@ -102,10 +97,6 @@ main {
 
 .weather-box {
   text-align: center;
-}
-
-.weather-icon .img{
- 
 }
 
 .weather-box .temp {
@@ -140,15 +131,11 @@ main {
   text-align: center;
 }
 
-/* ********************************************************** */
+
+/***************** Wikipedia Styles Start  *********************/
 
 .wiki {
-	/* display: flex; */
-	/* flex-direction: column; */
-	/* align-items: center; */
-	/* padding-top: 32px; */
-	/* padding-bottom: 32px; */
-  /* margin-bottom: 1000px; */
+  margin-bottom: 100px; 
 }
 
 h1 {
@@ -157,40 +144,11 @@ h1 {
 	font-size: 40px;
 	text-align: center;
   margin-top: 100px;
+  
 
-
-}
-
-.search-box-wiki {
-	/* display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 16px;
-	overflow: hidden;
-	width: 100%;
-	max-width: 480px;
-	transition: 0.4s;
-	margin-bottom: 16px; */
-  /* display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #e26d5c;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-  color: white;
-  box-shadow: 0.25rem 0.25rem 0rem #f0b2a8; */
 }
 
 .search-box-wiki input {
-	/* display: block; */
-  /* display: flex;
-	appearance: none;
-	outline: none;
-	border: none;
-	padding: 16px;
-	width: 50%;
-	transition: 0.4s;
-  position: relative; */
   appearance: none;
   background: none;
   border: none;
@@ -199,80 +157,58 @@ h1 {
   border-radius:14px;
   box-shadow: 0px 5px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  padding-left: 80px;
+  padding-left: 90px;
   margin-top: 20px;
   color: #adb9da;
-
-
-}
-
-.search-box-wiki:focus-within {
-	/* box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2); */
-	/* transform: translateY(-5px) */
-}
-
-.results {
   font-size: 20px;
-  /* display: inline-block; */
-  margin-top: 20px;
-  margin-left: 200px;
-  margin-right: 200px;
 
+
+}
+
+
+.wiki-results {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 100px;
+  margin-right: 100px;
   color: #0d2157dc;
-  /* background: #c1cccc;
-  border-radius: 40px; */
   padding: 80px;
-  /* width: 25%; */
   text-align: center;
 }
 
-.result {
-	/* width: 100%; */
-	/* padding: 16px;
-	margin-bottom: 16px;
-	border-radius: 16px;
-	transition: 0.4s; */
-  /* text-align: left; */
+.wiki-result {
   margin: 20px;
   background: #ecebe248;
   border-radius: 20px;
 }
 
-/* .result:hover {
-	box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-} */
-
-.result h3 {
-	/* color: #888; */
+.wiki-result h3 {
 	font-size: 15px;
 	margin: 16px;
 }
 
-.result p {
+.wiki-result p {
 	color: #313131;
 	font-size: 15px;
 	margin-bottom: 20px;
-  /* text-align: left; */
+
 }
 
-.result p::after {
+.wiki-result p::after {
 	content: '...';
 }
 
-.result a {
-	/* display: inline-block;
-	padding: 12px 16px;
-	background-color: #95c8d8; */
+.wiki-result a {
+
 	text-decoration: none;
   color: #0d2157dc;
-  /* background-color: #95c8d8; */
 	border-radius: 12px;
   font-size: 15px;
 	padding: 10px;
 
 }
 
-.result a:hover {
+.wiki-result a:hover {
 	background-color:  rgba(15, 38, 80, 0.801);
 }
 
