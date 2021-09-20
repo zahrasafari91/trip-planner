@@ -14,7 +14,7 @@ const weatherApi = {
 
 
 
-// react particles js
+// react particles
 
 const particlesOptions = {
   particles: {
@@ -22,7 +22,7 @@ const particlesOptions = {
       shadow: {
       enable: true,
       },
-      number: { value: 100, density: { enable: true} },
+      number: { value: 100, density: { enable: true, value_are:100} },
     color: { value: "#cbe8f2" },
     }
   }
@@ -196,7 +196,7 @@ function App() {
                   </div>
 
 
-                  ) : (<p className="message">Please Enter a valid city name to get a weather</p>)}
+                  ) : (<p className="message">Please enter a city name to get its weather</p>)}
               </div>
 
         </main>

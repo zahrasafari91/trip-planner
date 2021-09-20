@@ -58,7 +58,6 @@ main {
   display: block;
   width: 100%;
   padding: 15px;
-
   appearance: none;
   background: none;
   border: none;
@@ -105,13 +104,10 @@ main {
   margin: 30px auto;
   background-color: rgba(255, 255, 255, 0.2);
   border-radius: 16px;
-
   padding: 15px 25px;
-
   color: rgba(250, 243, 243, 0.952);
   font-size: 50px;
   font-weight: 800;
-
   text-shadow: 3px 6px rgba(50, 50, 70, 0.5);
   text-align: center;
   box-shadow: 3px 6px rgba(0, 0, 0, 0.2);
@@ -132,9 +128,12 @@ main {
 }
 
 
+
+
 /***************** Wikipedia Styles Start  *********************/
 
 .wiki {
+  margin-top: 10px;
   margin-bottom: 100px; 
 }
 
@@ -143,9 +142,6 @@ h1 {
   position: relative;
 	font-size: 40px;
 	text-align: center;
-  margin-top: 100px;
-  
-
 }
 
 .search-box-wiki input {
@@ -161,8 +157,6 @@ h1 {
   margin-top: 20px;
   color: #adb9da;
   font-size: 20px;
-
-
 }
 
 
