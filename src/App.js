@@ -33,7 +33,7 @@ const particlesOptions = {
 function App() {
 
 
-// search query for searching both weather and wikipedia api
+// Declare a search query state variable for searching both weather and wikipedia api
   const [query, setQuery] = useState('');
 
   const [weather, setWeather] = useState({});
@@ -41,7 +41,7 @@ function App() {
 	const [wikipedia, setWikipedia] = useState([]);
 
 
-//get weather
+//get weather function
   const searchWeather = e => {
     if (e.key === "Enter") {
 
@@ -107,7 +107,10 @@ function App() {
 		}
 
 		const json = await response.json();
+    
 		setWikipedia(json.query.search);
+
+    console.log(json);
 		
 	}
 

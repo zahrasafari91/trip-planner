@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-### API and Icon providers:
+### APIs and Icons providers:
 https://openweathermap.org/
 
 https://www.mediawiki.org/wiki/API:Main_page
