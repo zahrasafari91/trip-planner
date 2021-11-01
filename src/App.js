@@ -38,7 +38,7 @@ function App() {
 
   const [weather, setWeather] = useState({});
 
-	const [wikipedia, setWikipedia] = useState([]);
+  const [wikipedia, setWikipedia] = useState([]);
 
 
 //get weather function
