@@ -96,7 +96,7 @@ function App() {
         e.preventDefault();
         if (query === '') return;
 
-        const wikiApi = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=5&srsearch=${query}`;
+        const wikiApi = `https://en.wikipedia.org/w/api.php?action=query&list=search&prop=info&inprop=url&utf8=&format=json&origin=*&srlimit=15&srsearch=${query}`;
 
         const response = await fetch(wikiApi);
 
